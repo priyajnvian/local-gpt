@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local GPT</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="icons/icon.svg">
+    <link rel="alternate icon" href="icons/icon32.svg" type="image/svg+xml">
+    <style>
+        /* Additional styles for popup */
+        body {
+            width: 400px;
+            height: 600px;
+            margin: 0;
+            overflow: hidden;
+        }
+        .chat-container {
+            height: 100vh;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h2>Local GPT</h2>
+            <div class="model-info">
+                <span class="model-name">Qwen2.5-0.5B-Instruct (WebLLM)</span>
+                <span class="model-status" id="modelStatus">Loading...</span>
+            </div>
+        </div>
+        
+        <div class="chat-messages" id="chatMessages">
+            <div class="message assistant">
+                <div class="message-content">
+                    <p>👋 Welcome to Local GPT!</p>
+                    <p>This is your first time running the extension. The AI model needs to be initialized, which takes about <strong>1 minute</strong> on the first run.</p>
+                    <p>⏳ Please wait while I prepare everything for you...</p>
+                    <div id="firstRunProgress" style="margin-top: 15px; padding: 10px; background: rgba(255,255,255,0.1); border-radius: 8px; display: none;">
+                        <p style="margin: 5px 0;">🔄 Loading AI engine...</p>
+                        <p style="margin: 5px 0;">⚡ Initializing neural network...</p>
+                        <p style="margin: 5px 0;">🔒 Setting up private environment...</p>
+                    </div>
+                </div>
+            </div>
+            <div id="readyMessage" class="message assistant" style="display: none;">
+                <div class="message-content">
+                    <p>✅ All set! I'm ready to help you.</p>
+                    <p>💡 <strong>Try saying "Hi" to get started!</strong></p>
+                    <p>Remember: I run completely in your browser, so your conversations stay private.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="chat-input-container">
+            <textarea 
+                id="messageInput" 
+                class="message-input" 
+                placeholder="Type your message here..."
+                rows="2"
+            ></textarea>
+            <button id="sendButton" class="send-button">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                </svg>
+            </button>
+        </div>
+        
+        <div class="loading" id="loadingIndicator" style="display: none;">
+            <div class="loading-spinner"></div>
+            <span>Thinking...</span>
+        </div>
+    </div>
+    
+    <!-- Load WebLLM Libraries as ES Module -->
+    <script type="module" src="chat.js"></script>
+</body>
+</html>

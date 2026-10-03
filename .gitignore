@@ -1,0 +1,9 @@
+# macOS
+.DS_Store
+
+# Model weights — 275MB of Qwen2.5 shards. Downloaded separately, see README.
+models/
+
+# Editor noise
+.vscode/
+.idea/

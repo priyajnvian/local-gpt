@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local GPT - MediaPipe Edition</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="icons/icon.svg">
+    <link rel="alternate icon" href="icons/icon32.svg" type="image/svg+xml">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h2>Local GPT - WebLLM Edition</h2>
+            <div class="model-info">
+                <span class="model-name">Qwen2.5-0.5B-Instruct (WebLLM)</span>
+                <span class="model-status" id="modelStatus">Loading...</span>
+            </div>
+        </div>
+        
+        <div class="chat-messages" id="chatMessages">
+            <div class="message assistant">
+                <div class="message-content">
+                    <p>Hello! I'm a lightweight AI assistant running locally in your browser using WebLLM and the Qwen2.5-0.5B model. How can I help you today?</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="chat-input-container">
+            <textarea 
+                id="messageInput" 
+                class="message-input" 
+                placeholder="Type your message here..."
+                rows="2"
+            ></textarea>
+            <button id="sendButton" class="send-button">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                </svg>
+            </button>
+        </div>
+        
+        <div class="loading" id="loadingIndicator" style="display: none;">
+            <div class="loading-spinner"></div>
+            <span>Thinking...</span>
+        </div>
+    </div>
+    
+    <!-- Load WebLLM Libraries as ES Module -->
+    <script type="module" src="server-chat.js"></script>
+</body>
+</html>
