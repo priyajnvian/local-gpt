@@ -1,8 +1,12 @@
 # Local GPT
 
+**[▸ Install from the Chrome Web Store](https://chromewebstore.google.com/detail/local-gpt-private-ai-assi/jkjjlhpgbfmgknkjkdfhajgbeibjffbi)** — published and live.
+
 A Chrome extension that runs a real language model **entirely inside your browser**. No API key, no server, no network call once it's installed. Qwen2.5-0.5B-Instruct runs on WebGPU via [WebLLM](https://github.com/mlc-ai/web-llm), with the weights shipped inside the extension itself.
 
 Turn off your wifi and it still answers.
+
+> Installing from the store is the easy path — the model downloads once on first run and no build step is involved. The instructions below are for running it from source.
 
 ---
 
